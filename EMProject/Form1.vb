@@ -4,16 +4,16 @@
     Dim information As Information
     Dim notice As Notice
     Dim old_name As String
-    Private Sub Form1_Load(sender As Object, e As EventArgs)
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         home = New Home()
         home.TopLevel = False  'toplevel 을 false 로 변경하면 panel form 에 docking 가능
         home.Show()
         Me.Panel1.Controls.Add(home)
-        old_name = "Main"
+        old_name = "Home"
     End Sub
     Private Sub lbl_Main_Click(sender As Object, e As EventArgs) Handles lbl_Main.Click
-        old_name = "Main"
-        Panel_Find("Main")
+        old_name = "Home"
+        Panel_Find("Home")
     End Sub
     Private Sub Panel_Find(name As String)
         For Each p As Control In Panel1.Controls
@@ -23,26 +23,22 @@
             Panel1.Controls.Remove(p)
             p.Dispose()
         Next
-        If name = "Main" Then
-            MessageBox.Show("main")
+        If name = "Home" Then
             home = New Home()
             home.TopLevel = False
             home.Show()
             Me.Panel1.Controls.Add(home)
         ElseIf name = "Calendar" Then
-            MessageBox.Show("calendar")
             calendar = New Calendar
             calendar.TopLevel = False
             calendar.Show()
             Me.Panel1.Controls.Add(calendar)
         ElseIf name = "Information" Then
-            MessageBox.Show("information")
             information = New Information
             information.TopLevel = False
             information.Show()
             Me.Panel1.Controls.Add(information)
         ElseIf name = "Notice" Then
-            MessageBox.Show("notice")
             notice = New Notice
             notice.TopLevel = False
             notice.Show()

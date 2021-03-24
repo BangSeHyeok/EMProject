@@ -165,13 +165,13 @@ Partial Class Home
         '
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 322)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(-1, 322)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 3
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 167.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1264, 265)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1293, 305)
         Me.TableLayoutPanel1.TabIndex = 5
         '
         'Label1
@@ -188,7 +188,7 @@ Partial Class Home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1264, 587)
+        Me.ClientSize = New System.Drawing.Size(1290, 627)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.btn_gth)
         Me.Controls.Add(Me.btn_gtw)
