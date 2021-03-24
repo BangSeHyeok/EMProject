@@ -13,9 +13,7 @@
         Return True
     End Function
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim db = New MSDB
+    Private Sub Button2_Click(sender As Object, e As EventArgs) 
 
-        'db.User_Insert("select * from [EMProject].[dbo].[User]")
     End Sub
 End Class
