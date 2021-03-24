@@ -36,8 +36,10 @@ Partial Class Home
         Me.btn_gtw = New System.Windows.Forms.Button()
         Me.btn_gth = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -165,6 +167,7 @@ Partial Class Home
         '
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.Button1, 0, 2)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(-1, 322)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 3
@@ -173,6 +176,15 @@ Partial Class Home
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 167.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(1293, 305)
         Me.TableLayoutPanel1.TabIndex = 5
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(3, 141)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(154, 59)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -206,8 +218,9 @@ Partial Class Home
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Home"
-        Me.Text = "Main"
+        Me.Text = "ㅈ"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -228,4 +241,5 @@ Partial Class Home
     Friend WithEvents btn_gth As Button
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents Label1 As Label
+    Friend WithEvents Button1 As Button
 End Class
