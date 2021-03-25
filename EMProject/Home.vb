@@ -7,5 +7,6 @@ Public Class Home
         txt_Name.Text = Information_list(0)._E_Name
         txt_IntroDuction.Text = Information_list(0)._E_IntroDuction
         txt_Number.Text = Information_list(0)._E_Number
+        Dim count = db.WorkTime_Select_Count("[EMProject].[dbo].[WorkTime]", NumberVO._Number, DateTime.Now.ToString("yyyy-MM-dd"))
     End Sub
 End Class

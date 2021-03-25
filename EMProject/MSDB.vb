@@ -11,6 +11,7 @@ Public Class MSDB
     Dim scm As SqlCommand
     'DB 쿼리 실행
     Dim myReader As SqlDataReader
+   
     'DB 쿼리 결과를 검색
     Private Sub DBConn()
         'DB연결
@@ -18,6 +19,19 @@ Public Class MSDB
         scn.ConnectionString = "Data Source=" & strIP & ";Initial Catalog=" & strDB & ";Integrated Security=False;User ID=" & strID & ";Password=" & strPW
         scn.Open()
     End Sub
+    Function WorkTime_Select_Count(table As String, u_where_number As String, u_where_time As Date)
+        DBConn()
+        Dim query = "select E_Number from " & table & " where E_Number=" & u_where_number & " And E_Date >= " & u_where_time & " And E_Date <=" & u_where_time
+        MsgBox(query)
+        Dim count As Integer = -1
+        scm = New SqlCommand(query, scn)
+        myReader = scm.ExecuteReader()
+        Do While myReader.Read()
+            count += 1
+        Loop
+        MsgBox(count)
+        Return count
+    End Function
     Function Information_User(table As String, u_where As String)
         Dim Information_list As List(Of InformationVO) = New List(Of InformationVO)
         DBConn()
