@@ -12,12 +12,26 @@ Public Class MSDB
     'DB 쿼리 실행
     Dim myReader As SqlDataReader
     'DB 쿼리 결과를 검색
-    Public Sub DBConn()
+    Private Sub DBConn()
         'DB연결
         scn = New SqlConnection
         scn.ConnectionString = "Data Source=" & strIP & ";Initial Catalog=" & strDB & ";Integrated Security=False;User ID=" & strID & ";Password=" & strPW
         scn.Open()
     End Sub
+    Function Information_User(table As String, u_where As String)
+        Dim Information_list As List(Of InformationVO) = New List(Of InformationVO)
+        DBConn()
+        Dim query = "select * from " & table & " where E_Number=" & u_where
+        scm = New SqlCommand(query, scn)
+        myReader = scm.ExecuteReader()
+        Do While myReader.Read()
+            Information_list.Add(New InformationVO(myReader.GetString(0), myReader.GetString(1), myReader.GetInt32(2), myReader.GetString(3), myReader.GetString(4)))
+        Loop
+        myReader.Close()
+        scn.Close()
+        Return Information_list
+        'Return 부분 생
+    End Function
     Public Sub Select_All(table As String)
         'DB Insert부분
         DBConn()
