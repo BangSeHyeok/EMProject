@@ -5,6 +5,15 @@
     Dim notice As Notice
     Dim old_name As String
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim login As Login
+        Dim result As DialogResult
+        login = New Login()
+        result = login.ShowDialog()
+        If result <> DialogResult.OK Then
+            Me.Close()
+        Else
+            MessageBox.Show("로그인 성공")
+        End If
         home = New Home()
         home.TopLevel = False  'toplevel 을 false 로 변경하면 panel form 에 docking 가능
         home.Show()
