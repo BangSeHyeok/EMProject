@@ -18,11 +18,15 @@ Public Class MSDB
         scn.ConnectionString = "Data Source=" & strIP & ";Initial Catalog=" & strDB & ";Integrated Security=False;User ID=" & strID & ";Password=" & strPW
         scn.Open()
     End Sub
-    Public Sub Insert(table As String)
+    Public Sub Select_All(table As String)
         'DB Insert부분
         DBConn()
         Dim query = "select * from " & table
+        scm = New SqlCommand(query, scn)
+        myReader = scm.ExecuteReader()
+        myReader.Close()
         scn.Close()
+        'Return 부분 생각
     End Sub
     Public Sub Update(table As String, u_set As String, u_where As String)
         'DB Update부분
