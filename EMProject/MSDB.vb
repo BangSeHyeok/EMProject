@@ -21,7 +21,7 @@ Public Class MSDB
     Function Information_User(table As String, u_where As String)
         Dim Information_list As List(Of InformationVO) = New List(Of InformationVO)
         DBConn()
-        Dim query = "select * from " & table & " where E_Number=" & u_where
+        Dim query = "select * from " & table & " where E_Number= " & u_where
         scm = New SqlCommand(query, scn)
         myReader = scm.ExecuteReader()
         Do While myReader.Read()
@@ -47,8 +47,7 @@ Public Class MSDB
         DBConn()
         Dim query = "Update " & table & " set " & u_set & " where " & u_where
         scm = New SqlCommand(query, scn)
-        myReader = scm.ExecuteReader()
-        myReader.Close()
+        scm.ExecuteNonQuery()
         scn.Close()
     End Sub
     Public Sub Delete(table As String, u_where As String)

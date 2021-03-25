@@ -8,13 +8,34 @@
             Dim PW As String = txt_PW.Text
             Dim User_list As List(Of UserVO) = db.User_All("[EMProject].[dbo].[User]")
 
-            For i = 0 To User_list.Count
-                If User_list(i)._E_Number.Equals(Number) And User_list(i)._E_PW.Equals(PW) Then
+            Dim j As Integer = 0
+
+            For Each i In User_list
+
+                MessageBox.Show(User_list(j)._E_Number)
+                MessageBox.Show(User_list(j)._E_PW)
+
+                MessageBox.Show("중간점검")
+
+                MessageBox.Show(Number)
+                MessageBox.Show(PW)
+
+                If User_list(j)._E_Number.Equals(Number) And User_list(j)._E_PW.Equals(PW) Then
+
+
                     Me.DialogResult = DialogResult.OK
-                    NumberVO._Number = User_list(i)._E_Number
-                    Exit For
+                    NumberVO._Number = User_list(j)._E_Number
+                    Exit Sub
+
                 End If
+
+                j = j + 1
+
             Next
+
+            MessageBox.Show("아이디와 비밀번호를 확인해주세요.")
+
+
         End If
     End Sub
 

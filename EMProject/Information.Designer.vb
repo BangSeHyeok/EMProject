@@ -29,7 +29,7 @@ Partial Class Information
         Me.lbl_introduction = New System.Windows.Forms.Label()
         Me.lbl_Name = New System.Windows.Forms.Label()
         Me.lbl_Number = New System.Windows.Forms.Label()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.txt_IntroDuction = New System.Windows.Forms.RichTextBox()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -117,26 +117,26 @@ Partial Class Information
         Me.lbl_Name.AutoSize = True
         Me.lbl_Name.Location = New System.Drawing.Point(244, 124)
         Me.lbl_Name.Name = "lbl_Name"
-        Me.lbl_Name.Size = New System.Drawing.Size(55, 15)
+        Me.lbl_Name.Size = New System.Drawing.Size(31, 15)
         Me.lbl_Name.TabIndex = 10
-        Me.lbl_Name.Text = "イカンホ"
+        Me.lbl_Name.Text = "이름"
         '
         'lbl_Number
         '
         Me.lbl_Number.AutoSize = True
-        Me.lbl_Number.Location = New System.Drawing.Point(244, 195)
+        Me.lbl_Number.Location = New System.Drawing.Point(244, 189)
         Me.lbl_Number.Name = "lbl_Number"
-        Me.lbl_Number.Size = New System.Drawing.Size(63, 15)
+        Me.lbl_Number.Size = New System.Drawing.Size(55, 15)
         Me.lbl_Number.TabIndex = 11
-        Me.lbl_Number.Text = "75131006"
+        Me.lbl_Number.Text = "사원번호"
         '
-        'RichTextBox1
+        'txt_IntroDuction
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(47, 374)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(402, 96)
-        Me.RichTextBox1.TabIndex = 12
-        Me.RichTextBox1.Text = ""
+        Me.txt_IntroDuction.Location = New System.Drawing.Point(47, 374)
+        Me.txt_IntroDuction.Name = "txt_IntroDuction"
+        Me.txt_IntroDuction.Size = New System.Drawing.Size(402, 96)
+        Me.txt_IntroDuction.TabIndex = 12
+        Me.txt_IntroDuction.Text = ""
         '
         'Label3
         '
@@ -179,7 +179,7 @@ Partial Class Information
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(354, 114)
+        Me.Label8.Location = New System.Drawing.Point(354, 124)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(67, 15)
         Me.Label8.TabIndex = 19
@@ -332,7 +332,7 @@ Partial Class Information
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("맑은 고딕", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label9.Location = New System.Drawing.Point(354, 80)
+        Me.Label9.Location = New System.Drawing.Point(354, 90)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(48, 25)
         Me.Label9.TabIndex = 33
@@ -372,7 +372,7 @@ Partial Class Information
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.RichTextBox1)
+        Me.Controls.Add(Me.txt_IntroDuction)
         Me.Controls.Add(Me.lbl_Number)
         Me.Controls.Add(Me.lbl_Name)
         Me.Controls.Add(Me.lbl_introduction)
@@ -398,7 +398,7 @@ Partial Class Information
     Friend WithEvents lbl_introduction As Label
     Friend WithEvents lbl_Name As Label
     Friend WithEvents lbl_Number As Label
-    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents txt_IntroDuction As RichTextBox
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
