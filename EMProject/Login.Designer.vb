@@ -25,8 +25,8 @@ Partial Class Login
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txt_Number = New System.Windows.Forms.TextBox()
+        Me.txt_PW = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -61,19 +61,19 @@ Partial Class Login
         Me.Button1.Text = "ログイン"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'txt_Number
         '
-        Me.TextBox1.Location = New System.Drawing.Point(155, 184)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(162, 23)
-        Me.TextBox1.TabIndex = 2
+        Me.txt_Number.Location = New System.Drawing.Point(155, 184)
+        Me.txt_Number.Name = "txt_Number"
+        Me.txt_Number.Size = New System.Drawing.Size(162, 23)
+        Me.txt_Number.TabIndex = 2
         '
-        'TextBox2
+        'txt_PW
         '
-        Me.TextBox2.Location = New System.Drawing.Point(155, 259)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(162, 23)
-        Me.TextBox2.TabIndex = 2
+        Me.txt_PW.Location = New System.Drawing.Point(155, 259)
+        Me.txt_PW.Name = "txt_PW"
+        Me.txt_PW.Size = New System.Drawing.Size(162, 23)
+        Me.txt_PW.TabIndex = 2
         '
         'PictureBox1
         '
@@ -92,8 +92,8 @@ Partial Class Login
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(392, 433)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txt_PW)
+        Me.Controls.Add(Me.txt_Number)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -108,7 +108,7 @@ Partial Class Login
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txt_Number As TextBox
+    Friend WithEvents txt_PW As TextBox
     Friend WithEvents PictureBox1 As PictureBox
 End Class

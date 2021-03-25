@@ -19,7 +19,7 @@ Public Class MSDB
         scn.Open()
     End Sub
     Public Sub Select_All(table As String)
-        'DB Insert부분
+        'DB Select부분
         DBConn()
         Dim query = "select * from " & table
         scm = New SqlCommand(query, scn)
@@ -44,7 +44,23 @@ Public Class MSDB
         scn.Close()
     End Sub
 
+    Function User_All(table As String)
+        Dim User_list As List(Of UserVO) = New List(Of UserVO)
+        DBConn()
+        Dim query = "select * from " & table
+        scm = New SqlCommand(query, scn)
+        myReader = scm.ExecuteReader
 
+        Do While myReader.Read()
+            User_list.Add(New UserVO(myReader.GetString(0), myReader.GetString(1), myReader.GetString(2), myReader.GetInt32(3)))
+        Loop
+
+        myReader.Close()
+        scn.Close()
+
+
+        Return User_list
+    End Function
 
 
 
