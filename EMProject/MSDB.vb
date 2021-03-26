@@ -25,6 +25,7 @@ Public Class MSDB
         scm = New SqlCommand(query, scn)
         Dim count = scm.ExecuteScalar()
         scn.Close()
+        MsgBox(count)
         Return count
     End Function
     Public Sub WorkTime_gtw(table As String, u_where_number As String, u_where_time As String)
