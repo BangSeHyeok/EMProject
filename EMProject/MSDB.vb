@@ -21,7 +21,7 @@ Public Class MSDB
     Function Information_User(table As String, u_where As String)
         Dim Information_list As List(Of InformationVO) = New List(Of InformationVO)
         DBConn()
-        Dim query = "select * from " & table & " where E_Number= " & u_where
+        Dim query = "select * from " & table & " where E_Number= " & u_where.Trim
         scm = New SqlCommand(query, scn)
         myReader = scm.ExecuteReader()
         Do While myReader.Read()
@@ -33,7 +33,7 @@ Public Class MSDB
         'Return 부분 생
     End Function
     Public Sub Select_All(table As String)
-        'DB Select부분
+        'DB Select부분    
         DBConn()
         Dim query = "select * from " & table
         scm = New SqlCommand(query, scn)

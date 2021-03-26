@@ -11,26 +11,11 @@
             Dim j As Integer = 0
 
             For Each i In User_list
-
-                MessageBox.Show(User_list(j)._E_Number)
-                MessageBox.Show(User_list(j)._E_PW)
-
-                MessageBox.Show("중간점검")
-
-                MessageBox.Show(Number)
-                MessageBox.Show(PW)
-
-                If User_list(j)._E_Number.Equals(Number) And User_list(j)._E_PW.Equals(PW) Then
-
-
+                If i._E_Number.Equals(Number) And i._E_PW.Equals(PW) Then
                     Me.DialogResult = DialogResult.OK
-                    NumberVO._Number = User_list(j)._E_Number
+                    NumberVO._Number = i._E_Number
                     Exit Sub
-
                 End If
-
-                j = j + 1
-
             Next
 
             MessageBox.Show("아이디와 비밀번호를 확인해주세요.")
