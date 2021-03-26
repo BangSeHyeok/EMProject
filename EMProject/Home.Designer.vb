@@ -90,7 +90,7 @@ Partial Class Home
         '
         Me.lbl_Aname.AutoSize = True
         Me.lbl_Aname.Font = New System.Drawing.Font("맑은 고딕", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.lbl_Aname.Location = New System.Drawing.Point(591, 113)
+        Me.lbl_Aname.Location = New System.Drawing.Point(591, 95)
         Me.lbl_Aname.Name = "lbl_Aname"
         Me.lbl_Aname.Size = New System.Drawing.Size(74, 21)
         Me.lbl_Aname.TabIndex = 1
@@ -98,7 +98,7 @@ Partial Class Home
         '
         'txt_Aname
         '
-        Me.txt_Aname.Location = New System.Drawing.Point(700, 113)
+        Me.txt_Aname.Location = New System.Drawing.Point(700, 95)
         Me.txt_Aname.Name = "txt_Aname"
         Me.txt_Aname.ReadOnly = True
         Me.txt_Aname.Size = New System.Drawing.Size(134, 23)
@@ -108,7 +108,7 @@ Partial Class Home
         '
         Me.lbl_Name.AutoSize = True
         Me.lbl_Name.Font = New System.Drawing.Font("맑은 고딕", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.lbl_Name.Location = New System.Drawing.Point(264, 111)
+        Me.lbl_Name.Location = New System.Drawing.Point(264, 93)
         Me.lbl_Name.Name = "lbl_Name"
         Me.lbl_Name.Size = New System.Drawing.Size(42, 21)
         Me.lbl_Name.TabIndex = 1
@@ -116,7 +116,7 @@ Partial Class Home
         '
         'txt_Name
         '
-        Me.txt_Name.Location = New System.Drawing.Point(373, 111)
+        Me.txt_Name.Location = New System.Drawing.Point(373, 93)
         Me.txt_Name.Name = "txt_Name"
         Me.txt_Name.ReadOnly = True
         Me.txt_Name.Size = New System.Drawing.Size(134, 23)
@@ -126,7 +126,7 @@ Partial Class Home
         '
         Me.lbl_IntroDuction.AutoSize = True
         Me.lbl_IntroDuction.Font = New System.Drawing.Font("맑은 고딕", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.lbl_IntroDuction.Location = New System.Drawing.Point(264, 189)
+        Me.lbl_IntroDuction.Location = New System.Drawing.Point(264, 152)
         Me.lbl_IntroDuction.Name = "lbl_IntroDuction"
         Me.lbl_IntroDuction.Size = New System.Drawing.Size(74, 21)
         Me.lbl_IntroDuction.TabIndex = 1
@@ -134,7 +134,7 @@ Partial Class Home
         '
         'txt_IntroDuction
         '
-        Me.txt_IntroDuction.Location = New System.Drawing.Point(373, 191)
+        Me.txt_IntroDuction.Location = New System.Drawing.Point(373, 154)
         Me.txt_IntroDuction.Name = "txt_IntroDuction"
         Me.txt_IntroDuction.ReadOnly = True
         Me.txt_IntroDuction.Size = New System.Drawing.Size(858, 96)
@@ -144,7 +144,7 @@ Partial Class Home
         'btn_gtw
         '
         Me.btn_gtw.Font = New System.Drawing.Font("맑은 고딕", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.btn_gtw.Location = New System.Drawing.Point(1076, 21)
+        Me.btn_gtw.Location = New System.Drawing.Point(915, 52)
         Me.btn_gtw.Name = "btn_gtw"
         Me.btn_gtw.Size = New System.Drawing.Size(125, 54)
         Me.btn_gtw.TabIndex = 4
@@ -154,7 +154,7 @@ Partial Class Home
         'btn_gth
         '
         Me.btn_gth.Font = New System.Drawing.Font("맑은 고딕", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.btn_gth.Location = New System.Drawing.Point(1076, 94)
+        Me.btn_gth.Location = New System.Drawing.Point(1081, 52)
         Me.btn_gth.Name = "btn_gth"
         Me.btn_gth.Size = New System.Drawing.Size(125, 54)
         Me.btn_gth.TabIndex = 4
@@ -165,20 +165,20 @@ Partial Class Home
         '
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(-1, 322)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(-1, 303)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 3
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 167.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1293, 305)
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 122.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 166.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1293, 324)
         Me.TableLayoutPanel1.TabIndex = 5
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("맑은 고딕", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(4, 285)
+        Me.Label1.Location = New System.Drawing.Point(12, 260)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(118, 30)
         Me.Label1.TabIndex = 1
