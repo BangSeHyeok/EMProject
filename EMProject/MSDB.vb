@@ -19,19 +19,28 @@ Public Class MSDB
         scn.ConnectionString = "Data Source=" & strIP & ";Initial Catalog=" & strDB & ";Integrated Security=False;User ID=" & strID & ";Password=" & strPW
         scn.Open()
     End Sub
-    Function WorkTime_Select_Count(table As String, u_where_number As String, u_where_time As Date)
+    Function WorkTime_Count(table As String, u_where_number As String, u_where_time As String)
         DBConn()
-        Dim query = "select E_Number from " & table & " where E_Number=" & u_where_number & " And E_Date >= " & u_where_time & " And E_Date <=" & u_where_time
-        MsgBox(query)
-        Dim count As Integer = -1
+        Dim query = "select Count(*) from " & table & " where E_Number=" & u_where_number & " And E_Date='" & u_where_time & "'"
         scm = New SqlCommand(query, scn)
-        myReader = scm.ExecuteReader()
-        Do While myReader.Read()
-            count += 1
-        Loop
-        MsgBox(count)
+        Dim count = scm.ExecuteScalar()
+        scn.Close()
         Return count
     End Function
+    Public Sub WorkTime_gtw(table As String, u_where_number As String, u_where_time As String)
+        DBConn()
+        Dim query = "insert into " & table & "(E_Number,E_Date,E_gtw) VALUES('" & u_where_number & "','" & DateTime.Now.ToString("yyyy-MM-dd") & "','" & u_where_time & "'"
+        scm = New SqlCommand(query, scn)
+        scm.ExecuteNonQuery()
+        scn.Close()
+    End Sub
+    Public Sub WorkTime_gth(table As String, u_where_number As String, u_where_time As String)
+        DBConn()
+        Dim query = "update " & table & "set E_gth='" & u_where_time & "' where E_Number=" & u_where_number & " And E_Date='" & DateTime.Now.ToString("yyyy-MM-dd") & "'"
+        scm = New SqlCommand(query, scn)
+        scm.ExecuteNonQuery()
+        scn.Close()
+    End Sub
     Function Information_User(table As String, u_where As String)
         Dim Information_list As List(Of InformationVO) = New List(Of InformationVO)
         DBConn()
