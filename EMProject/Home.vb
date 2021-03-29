@@ -9,10 +9,11 @@ Public Class Home
         txt_IntroDuction.Text = Information_list(0)._E_IntroDuction
         txt_Number.Text = Information_list(0)._E_Number
         Dim count = db.WorkTime_Count("[EMProject].[dbo].[WorkTime]", NumberVO._Number, DateTime.Now.ToString("yyyy-MM-dd"))
+        MsgBox(count)
         If count = 2 Then
             btn_gtw.Enabled = False
             btn_gth.Enabled = False
-        ElseIf count = 0 Then
+        ElseIf count = 1 Then
             btn_gtw.Enabled = False
             btn_gth.Enabled = True
         Else
