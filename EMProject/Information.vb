@@ -35,7 +35,7 @@
 
 
     End Sub
-
+    Private 
     For Each i In User_list
             x = New ListViewItem(i._E_Name)
             x.SubItems.Add(i._E_Number)
