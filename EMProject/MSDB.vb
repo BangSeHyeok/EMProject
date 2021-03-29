@@ -81,7 +81,8 @@ Public Class MSDB
     Public Sub Update(table As String, u_set As String, u_where As String)
         'DB Update부분
         DBConn()
-        Dim query = "Update " & table & " set " & u_set & " where " & u_where
+        Dim query = "Update " & table & " set " & u_set & "' where " & u_where
+        MessageBox.Show(query)
         scm = New SqlCommand(query, scn)
         scm.ExecuteNonQuery()
         scn.Close()

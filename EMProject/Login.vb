@@ -7,9 +7,6 @@
             Dim Number As String = txt_Number.Text
             Dim PW As String = txt_PW.Text
             Dim User_list As List(Of UserVO) = db.User_All("[EMProject].[dbo].[User]")
-
-            Dim j As Integer = 0
-
             For Each i In User_list
                 If i._E_Number.Equals(Number) And i._E_PW.Equals(PW) Then
                     Me.DialogResult = DialogResult.OK
