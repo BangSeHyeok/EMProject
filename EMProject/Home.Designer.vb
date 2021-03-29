@@ -143,6 +143,7 @@ Partial Class Home
         '
         'btn_gtw
         '
+        Me.btn_gtw.Enabled = False
         Me.btn_gtw.Font = New System.Drawing.Font("맑은 고딕", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.btn_gtw.Location = New System.Drawing.Point(915, 52)
         Me.btn_gtw.Name = "btn_gtw"
@@ -153,6 +154,7 @@ Partial Class Home
         '
         'btn_gth
         '
+        Me.btn_gth.Enabled = False
         Me.btn_gth.Font = New System.Drawing.Font("맑은 고딕", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.btn_gth.Location = New System.Drawing.Point(1081, 52)
         Me.btn_gth.Name = "btn_gth"

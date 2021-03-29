@@ -4,16 +4,20 @@ Public Class Home
     Private Sub Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim db As MSDB = New MSDB
         Dim Information_list As List(Of InformationVO) = db.Information_User("[EMProject].[dbo].[Information]", NumberVO._Number)
-        MsgBox(Information_list.Count)
+        ' MsgBox(Information_list.Count)
         txt_Name.Text = Information_list(0)._E_Name
         txt_IntroDuction.Text = Information_list(0)._E_IntroDuction
         txt_Number.Text = Information_list(0)._E_Number
-        If db.WorkTime_Count("[EMProject].[dbo].[WorkTime]", NumberVO._Number, DateTime.Now.ToString("yyyy-MM-dd")) <> 0 Then
+        Dim count = db.WorkTime_Count("[EMProject].[dbo].[WorkTime]", NumberVO._Number, DateTime.Now.ToString("yyyy-MM-dd"))
+        If count = 2 Then
+            btn_gtw.Enabled = False
+            btn_gth.Enabled = False
+        ElseIf count = 0 Then
             btn_gtw.Enabled = False
             btn_gth.Enabled = True
         Else
             btn_gtw.Enabled = True
-            btn_gtw.Enabled = False
+            btn_gth.Enabled = False
         End If
     End Sub
 
