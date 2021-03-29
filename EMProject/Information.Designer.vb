@@ -22,7 +22,7 @@ Partial Class Information
     '코드 편집기에서는 수정하지 마세요.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("")
+        Dim ListViewItem2 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("")
         Me.lbl_qNumber = New System.Windows.Forms.Label()
         Me.lbl_qname = New System.Windows.Forms.Label()
         Me.btn_update = New System.Windows.Forms.Button()
@@ -62,6 +62,7 @@ Partial Class Information
         Me.LV_list = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = New System.Windows.Forms.ColumnHeader()
         Me.ColumnHeader2 = New System.Windows.Forms.ColumnHeader()
+        Me.pb_Worktime = New System.Windows.Forms.ProgressBar()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_List, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -286,8 +287,12 @@ Partial Class Information
         Me.Label2.TabIndex = 29
         Me.Label2.Text = "月 근무상황"
         '
-        'pb_Worktime
+        'ProgressBar1
         '
+        Me.ProgressBar1.Location = New System.Drawing.Point(0, 0)
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(100, 23)
+        Me.ProgressBar1.TabIndex = 36
         '
         'dgv_List
         '
@@ -354,7 +359,7 @@ Partial Class Information
         Me.LV_list.FullRowSelect = True
         Me.LV_list.GridLines = True
         Me.LV_list.HideSelection = False
-        Me.LV_list.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1})
+        Me.LV_list.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem2})
         Me.LV_list.Location = New System.Drawing.Point(920, 73)
         Me.LV_list.Name = "LV_list"
         Me.LV_list.Size = New System.Drawing.Size(331, 450)
@@ -370,11 +375,19 @@ Partial Class Information
         '
         Me.ColumnHeader2.Text = "User Number"
         '
+        'pb_Worktime
+        '
+        Me.pb_Worktime.Location = New System.Drawing.Point(463, 90)
+        Me.pb_Worktime.Name = "pb_Worktime"
+        Me.pb_Worktime.Size = New System.Drawing.Size(438, 23)
+        Me.pb_Worktime.TabIndex = 37
+        '
         'Information
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1290, 627)
+        Me.Controls.Add(Me.pb_Worktime)
         Me.Controls.Add(Me.LV_list)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
@@ -453,4 +466,5 @@ Partial Class Information
     Friend WithEvents LV_list As ListView
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
+    Friend WithEvents pb_Worktime As ProgressBar
 End Class
