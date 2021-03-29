@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Information
     Inherits System.Windows.Forms.Form
 
     'Form은 Dispose를 재정의하여 구성 요소 목록을 정리합니다.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,8 +20,9 @@ Partial Class Information
     '참고: 다음 프로시저는 Windows Form 디자이너에 필요합니다.
     '수정하려면 Windows Form 디자이너를 사용하십시오.  
     '코드 편집기에서는 수정하지 마세요.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("")
         Me.lbl_qNumber = New System.Windows.Forms.Label()
         Me.lbl_qname = New System.Windows.Forms.Label()
         Me.btn_update = New System.Windows.Forms.Button()
@@ -50,7 +51,7 @@ Partial Class Information
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.dgv_List = New System.Windows.Forms.DataGridView()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -58,9 +59,12 @@ Partial Class Information
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.LV_list = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = New System.Windows.Forms.ColumnHeader()
+        Me.ColumnHeader2 = New System.Windows.Forms.ColumnHeader()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_List, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbl_qNumber
@@ -289,15 +293,15 @@ Partial Class Information
         Me.ProgressBar1.Size = New System.Drawing.Size(152, 23)
         Me.ProgressBar1.TabIndex = 30
         '
-        'DataGridView2
+        'dgv_List
         '
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column5, Me.Column6, Me.Column7, Me.Column8})
-        Me.DataGridView2.Location = New System.Drawing.Point(920, 68)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.RowTemplate.Height = 25
-        Me.DataGridView2.Size = New System.Drawing.Size(358, 490)
-        Me.DataGridView2.TabIndex = 31
+        Me.dgv_List.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_List.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column5, Me.Column6, Me.Column7, Me.Column8})
+        Me.dgv_List.Location = New System.Drawing.Point(501, 421)
+        Me.dgv_List.Name = "dgv_List"
+        Me.dgv_List.RowTemplate.Height = 25
+        Me.dgv_List.Size = New System.Drawing.Size(358, 102)
+        Me.dgv_List.TabIndex = 31
         '
         'Column5
         '
@@ -348,15 +352,38 @@ Partial Class Information
         Me.Label10.TabIndex = 34
         Me.Label10.Text = "information"
         '
+        'LV_list
+        '
+        Me.LV_list.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2})
+        Me.LV_list.FullRowSelect = True
+        Me.LV_list.GridLines = True
+        Me.LV_list.HideSelection = False
+        Me.LV_list.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1})
+        Me.LV_list.Location = New System.Drawing.Point(920, 73)
+        Me.LV_list.Name = "LV_list"
+        Me.LV_list.Size = New System.Drawing.Size(331, 450)
+        Me.LV_list.TabIndex = 35
+        Me.LV_list.UseCompatibleStateImageBehavior = False
+        Me.LV_list.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "User Name"
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "User Number"
+        '
         'Information
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1290, 627)
+        Me.Controls.Add(Me.LV_list)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.DataGridView2)
+        Me.Controls.Add(Me.dgv_List)
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -385,7 +412,7 @@ Partial Class Information
         Me.Text = "sssssdsd"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_List, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -419,7 +446,7 @@ Partial Class Information
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents ProgressBar1 As ProgressBar
-    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents dgv_List As DataGridView
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
@@ -427,4 +454,7 @@ Partial Class Information
     Friend WithEvents Label5 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
+    Friend WithEvents LV_list As ListView
+    Friend WithEvents ColumnHeader1 As ColumnHeader
+    Friend WithEvents ColumnHeader2 As ColumnHeader
 End Class
