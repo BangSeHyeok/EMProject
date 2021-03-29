@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Information
     Inherits System.Windows.Forms.Form
 
     'Form은 Dispose를 재정의하여 구성 요소 목록을 정리합니다.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Information
     '참고: 다음 프로시저는 Windows Form 디자이너에 필요합니다.
     '수정하려면 Windows Form 디자이너를 사용하십시오.  
     '코드 편집기에서는 수정하지 마세요.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.lbl_qNumber = New System.Windows.Forms.Label()
         Me.lbl_qname = New System.Windows.Forms.Label()
@@ -49,8 +49,8 @@ Partial Class Information
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.pb_Worktime = New System.Windows.Forms.ProgressBar()
+        Me.dgv_List = New System.Windows.Forms.DataGridView()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -282,12 +282,12 @@ Partial Class Information
         Me.Label2.TabIndex = 29
         Me.Label2.Text = "月 근무상황"
         '
-        'ProgressBar1
+        'pb_Worktime
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(463, 86)
-        Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(152, 23)
-        Me.ProgressBar1.TabIndex = 30
+        Me.pb_Worktime.Location = New System.Drawing.Point(463, 86)
+        Me.pb_Worktime.Name = "pb_Worktime"
+        Me.pb_Worktime.Size = New System.Drawing.Size(189, 37)
+        Me.pb_Worktime.TabIndex = 30
         '
         'DataGridView2
         '
@@ -356,7 +356,7 @@ Partial Class Information
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.DataGridView2)
+        Me.Controls.Add(Me.dgv_List)
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -427,4 +427,7 @@ Partial Class Information
     Friend WithEvents Label5 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
+    Friend WithEvents LV_list As ListView
+    Friend WithEvents ColumnHeader1 As ColumnHeader
+    Friend WithEvents ColumnHeader2 As ColumnHeader
 End Class
