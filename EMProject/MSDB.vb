@@ -11,12 +11,36 @@ Public Class MSDB
     Dim scm As SqlCommand
     'DB 쿼리 실행
     Dim myReader As SqlDataReader
+   
     'DB 쿼리 결과를 검색
     Private Sub DBConn()
         'DB연결
         scn = New SqlConnection
         scn.ConnectionString = "Data Source=" & strIP & ";Initial Catalog=" & strDB & ";Integrated Security=False;User ID=" & strID & ";Password=" & strPW
         scn.Open()
+    End Sub
+    Function WorkTime_Count(table As String, u_where_number As String, u_where_time As String)
+        DBConn()
+        Dim query = "select Count(*) from " & table & " where E_Number=" & u_where_number & " And E_Date='" & u_where_time & "'"
+        scm = New SqlCommand(query, scn)
+        Dim count = scm.ExecuteScalar()
+        scn.Close()
+        MsgBox(count)
+        Return count
+    End Function
+    Public Sub WorkTime_gtw(table As String, u_where_number As String, u_where_time As String)
+        DBConn()
+        Dim query = "insert into " & table & "(E_Number,E_Date,E_gtw) VALUES('" & u_where_number & "','" & DateTime.Now.ToString("yyyy-MM-dd") & "','" & u_where_time & "'"
+        scm = New SqlCommand(query, scn)
+        scm.ExecuteNonQuery()
+        scn.Close()
+    End Sub
+    Public Sub WorkTime_gth(table As String, u_where_number As String, u_where_time As String)
+        DBConn()
+        Dim query = "update " & table & "set E_gth='" & u_where_time & "' where E_Number=" & u_where_number & " And E_Date='" & DateTime.Now.ToString("yyyy-MM-dd") & "'"
+        scm = New SqlCommand(query, scn)
+        scm.ExecuteNonQuery()
+        scn.Close()
     End Sub
     Function Information_User(table As String, u_where As String)
         Dim Information_list As List(Of InformationVO) = New List(Of InformationVO)
