@@ -24,20 +24,32 @@ Public Class MSDB
         Dim query = "select Count(*) from " & table & " where E_Number=" & u_where_number & " And E_Date='" & u_where_time & "'"
         scm = New SqlCommand(query, scn)
         Dim count = scm.ExecuteScalar()
+        If count = 1 Then
+            query = "select * from " & table & " where E_Number=" & u_where_number & " And E_Date='" & u_where_time & "'"
+            scm = New SqlCommand(query, scn)
+            myReader = scm.ExecuteReader()
+            Do While myReader.Read()
+                If myReader.GetValue(3).ToString <> "" Then
+                    myReader.Close()
+                    Return 2
+                End If
+            Loop
+            myReader.Close()
+        End If
         scn.Close()
-        MsgBox(count)
         Return count
     End Function
     Public Sub WorkTime_gtw(table As String, u_where_number As String, u_where_time As String)
         DBConn()
-        Dim query = "insert into " & table & "(E_Number,E_Date,E_gtw) VALUES('" & u_where_number & "','" & DateTime.Now.ToString("yyyy-MM-dd") & "','" & u_where_time & "'"
+        Dim query = "insert into " & table & "(E_Number,E_Date,E_gtw) VALUES('" & u_where_number & "','" & DateTime.Now.ToString("yyyy-MM-dd") & "','" & u_where_time & "')"
         scm = New SqlCommand(query, scn)
         scm.ExecuteNonQuery()
         scn.Close()
     End Sub
     Public Sub WorkTime_gth(table As String, u_where_number As String, u_where_time As String)
         DBConn()
-        Dim query = "update " & table & "set E_gth='" & u_where_time & "' where E_Number=" & u_where_number & " And E_Date='" & DateTime.Now.ToString("yyyy-MM-dd") & "'"
+        Dim query = "update " & table & "set E_gtn='" & u_where_time & "' where E_Number=" & u_where_number & " And E_Date='" & DateTime.Now.ToString("yyyy-MM-dd") & "'"
+        MsgBox(query)
         scm = New SqlCommand(query, scn)
         scm.ExecuteNonQuery()
         scn.Close()
