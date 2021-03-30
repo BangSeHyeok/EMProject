@@ -107,7 +107,7 @@ Public Class Information
         Dim WorkTime_list As List(Of WorkTimeVO) = db.workTime_total("[EMProject].[dbo].[WorkTime]", Information_list(0)._E_Number)
 
         '시간 가지고온 김에 여기서 리스트 출력할게요
-        worklist
+        'worklist
 
         '시간계산을 하기위한 TimeSpan 함수 
         Dim TSpan As TimeSpan
