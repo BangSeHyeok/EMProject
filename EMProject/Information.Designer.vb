@@ -22,7 +22,8 @@ Partial Class Information
     '코드 편집기에서는 수정하지 마세요.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim ListViewItem2 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("")
+        Dim ListViewItem3 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("")
+        Dim ListViewItem4 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("")
         Me.lbl_qNumber = New System.Windows.Forms.Label()
         Me.lbl_qname = New System.Windows.Forms.Label()
         Me.btn_update = New System.Windows.Forms.Button()
@@ -51,11 +52,6 @@ Partial Class Information
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
-        Me.dgv_List = New System.Windows.Forms.DataGridView()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -63,9 +59,14 @@ Partial Class Information
         Me.ColumnHeader1 = New System.Windows.Forms.ColumnHeader()
         Me.ColumnHeader2 = New System.Windows.Forms.ColumnHeader()
         Me.pb_Worktime = New System.Windows.Forms.ProgressBar()
+        Me.lbl_percent = New System.Windows.Forms.Label()
+        Me.lv_WorkList = New System.Windows.Forms.ListView()
+        Me.ColumnHeader3 = New System.Windows.Forms.ColumnHeader()
+        Me.ColumnHeader4 = New System.Windows.Forms.ColumnHeader()
+        Me.ColumnHeader5 = New System.Windows.Forms.ColumnHeader()
+        Me.ColumnHeader6 = New System.Windows.Forms.ColumnHeader()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgv_List, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbl_qNumber
@@ -225,10 +226,10 @@ Partial Class Information
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4})
-        Me.DataGridView1.Location = New System.Drawing.Point(463, 214)
+        Me.DataGridView1.Location = New System.Drawing.Point(463, 374)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 25
-        Me.DataGridView1.Size = New System.Drawing.Size(438, 163)
+        Me.DataGridView1.Size = New System.Drawing.Size(438, 171)
         Me.DataGridView1.TabIndex = 24
         '
         'Column1
@@ -281,7 +282,7 @@ Partial Class Information
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(463, 48)
+        Me.Label2.Location = New System.Drawing.Point(463, 35)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(71, 15)
         Me.Label2.TabIndex = 29
@@ -293,36 +294,6 @@ Partial Class Information
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(100, 23)
         Me.ProgressBar1.TabIndex = 36
-        '
-        'dgv_List
-        '
-        Me.dgv_List.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_List.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column5, Me.Column6, Me.Column7, Me.Column8})
-        Me.dgv_List.Location = New System.Drawing.Point(501, 421)
-        Me.dgv_List.Name = "dgv_List"
-        Me.dgv_List.RowTemplate.Height = 25
-        Me.dgv_List.Size = New System.Drawing.Size(358, 102)
-        Me.dgv_List.TabIndex = 31
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "이름"
-        Me.Column5.Name = "Column5"
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "사원번호"
-        Me.Column6.Name = "Column6"
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "직급"
-        Me.Column7.Name = "Column7"
-        '
-        'Column8
-        '
-        Me.Column8.HeaderText = "카테고리"
-        Me.Column8.Name = "Column8"
         '
         'Label5
         '
@@ -359,7 +330,7 @@ Partial Class Information
         Me.LV_list.FullRowSelect = True
         Me.LV_list.GridLines = True
         Me.LV_list.HideSelection = False
-        Me.LV_list.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem2})
+        Me.LV_list.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem3})
         Me.LV_list.Location = New System.Drawing.Point(920, 73)
         Me.LV_list.Name = "LV_list"
         Me.LV_list.Size = New System.Drawing.Size(331, 450)
@@ -382,17 +353,57 @@ Partial Class Information
         Me.pb_Worktime.Size = New System.Drawing.Size(438, 23)
         Me.pb_Worktime.TabIndex = 37
         '
+        'lbl_percent
+        '
+        Me.lbl_percent.AutoSize = True
+        Me.lbl_percent.Location = New System.Drawing.Point(463, 61)
+        Me.lbl_percent.Name = "lbl_percent"
+        Me.lbl_percent.Size = New System.Drawing.Size(43, 15)
+        Me.lbl_percent.TabIndex = 38
+        Me.lbl_percent.Text = "퍼센트"
+        '
+        'lv_WorkList
+        '
+        Me.lv_WorkList.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
+        Me.lv_WorkList.FullRowSelect = True
+        Me.lv_WorkList.GridLines = True
+        Me.lv_WorkList.HideSelection = False
+        Me.lv_WorkList.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem4})
+        Me.lv_WorkList.Location = New System.Drawing.Point(463, 204)
+        Me.lv_WorkList.Name = "lv_WorkList"
+        Me.lv_WorkList.Size = New System.Drawing.Size(438, 155)
+        Me.lv_WorkList.TabIndex = 39
+        Me.lv_WorkList.UseCompatibleStateImageBehavior = False
+        Me.lv_WorkList.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "출근한날"
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "출근시간"
+        '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "퇴근시간"
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "근무시간"
+        '
         'Information
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1290, 627)
+        Me.Controls.Add(Me.lv_WorkList)
+        Me.Controls.Add(Me.lbl_percent)
         Me.Controls.Add(Me.pb_Worktime)
         Me.Controls.Add(Me.LV_list)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.dgv_List)
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -421,7 +432,6 @@ Partial Class Information
         Me.Text = "sssssdsd"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgv_List, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -455,11 +465,6 @@ Partial Class Information
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents ProgressBar1 As ProgressBar
-    Friend WithEvents dgv_List As DataGridView
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents Label5 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
@@ -467,4 +472,10 @@ Partial Class Information
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents pb_Worktime As ProgressBar
+    Friend WithEvents lbl_percent As Label
+    Friend WithEvents lv_WorkList As ListView
+    Friend WithEvents ColumnHeader3 As ColumnHeader
+    Friend WithEvents ColumnHeader4 As ColumnHeader
+    Friend WithEvents ColumnHeader5 As ColumnHeader
+    Friend WithEvents ColumnHeader6 As ColumnHeader
 End Class

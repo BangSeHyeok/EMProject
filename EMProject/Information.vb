@@ -1,4 +1,5 @@
-﻿Public Class Information
+﻿
+Public Class Information
 
     Dim db As MSDB = New MSDB
     Dim Information_list As List(Of InformationVO) = db.Information_User("[EMProject].[dbo].[Information]", NumberVO._Number)
@@ -20,13 +21,6 @@
 
     End Sub
 
-    Private Function test() As List(Of UserVO)
-
-        Dim userlist As New List(Of UserVO)
-
-        Return userlist
-
-    End Function
 
     Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
 
@@ -39,17 +33,11 @@
 
         ' 조건
         Dim u_where As String = " E_Number = " & Information_list(0)._E_Number
-
         db.Update(table, u_set, u_where)
 
 
     End Sub
 
-    Private Sub worktime()
-
-        pb_Worktime.Value = Val(30)
-
-    End Sub
     Private Sub officeList()
 
         LV_list.Items.Clear()
@@ -63,5 +51,90 @@
         Next
 
     End Sub
+
+    ' 현재月 근무 진행도
+    Private Sub worktime()
+
+        '현재 月 해야할 근무시간 체크 
+        worktimeCheck()
+
+        '로그인人　근무시간 가져오기   
+        workertime()
+
+        '현재 月 근무 진행 상황 (시간으로 변환, 소수점없이)
+        Dim workrate As Integer = pb_Worktime.Value / 60
+
+        '프로그래스 Bar 위에 진행율 표시.
+        lbl_percent.Text = workrate & "/" & pb_Worktime.Maximum / 60 & "        " & Mid(pb_Worktime.Value / pb_Worktime.Maximum * 100 & "%", 1, 2) & " %진행중..."
+
+    End Sub
+
+    Private Sub worktimeCheck()
+        ' 현재月 근무 해야하는 시간
+
+        Dim year As Integer = DateTime.Now.ToString("yyyy")
+        Dim month As Integer = DateTime.Now.ToString("MM")
+
+        '월 일수 추출
+        Dim days As String = Mid(DateSerial(year, month + 1, 1 - 1), 9, 2)
+
+        'For문을 위한 i 선언
+        Dim i As Long
+
+        '평일 카운트 변수
+        Dim dcount As Integer = 0
+
+        For i = 1 To days
+            Dim dt As New Date(year, month, i)
+            If dt.DayOfWeek <> DayOfWeek.Saturday And dt.DayOfWeek <> DayOfWeek.Sunday Then
+                dcount = dcount + 1
+            End If
+        Next
+
+        '月 최대 근무 시간 분 으로 계산
+        Dim monthworktime As Integer = dcount * 8 * 60
+
+        If monthworktime > 178 * 60 Then
+            monthworktime = 177 * 60
+        End If
+
+        pb_Worktime.Maximum = monthworktime
+
+    End Sub
+
+    Public Sub workertime()
+
+        Dim WorkTime_list As List(Of WorkTimeVO) = db.workTime_total("[EMProject].[dbo].[WorkTime]", Information_list(0)._E_Number)
+
+        '시간 가지고온 김에 여기서 리스트 출력할게요
+        worklist
+
+        '시간계산을 하기위한 TimeSpan 함수 
+        Dim TSpan As TimeSpan
+
+        '분으로 계산한 총합 그릇.
+        Dim worktotal As Integer = 0
+
+        'span에서 분 추출
+        Dim minutetotal As Integer = 0
+
+
+        For Each i In WorkTime_list
+
+            TSpan = i._E_qtn.Subtract(i._E_qtw)
+
+            '점심시간 때문에 60 한번 빼준다.
+            worktotal = TSpan.Hours * 60 + TSpan.Minutes - 60
+
+            minutetotal = minutetotal + worktotal
+
+        Next
+
+        '현재 근무 시간
+        pb_Worktime.Value = minutetotal
+
+    End Sub
+
+
 
 End Class

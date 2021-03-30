@@ -109,9 +109,30 @@ Public Class MSDB
         myReader.Close()
         scn.Close()
 
-
         Return User_list
     End Function
+    Function workTime_total(table As String, u_where As String)
+
+        '현재 月 출력
+        Dim Tmonth As String = DateTime.Now.ToString("yyyy-MM")
+        Dim WorkTime_list As List(Of WorkTimeVO) = New List(Of WorkTimeVO)
+
+        DBConn()
+        Dim query = "select * from " & table & " where E_Number = " & u_where & "and Left(E_date,7) = '" & Tmonth & "'"
+        scm = New SqlCommand(query, scn)
+        myReader = scm.ExecuteReader
+
+        Do While myReader.Read()
+            WorkTime_list.Add(New WorkTimeVO(myReader.GetString(0), myReader.GetDateTime(1), myReader.GetDateTime(2), myReader.GetDateTime(3)))
+        Loop
+
+        myReader.Close()
+        scn.Close()
+
+        Return WorkTime_list
+
+    End Function
+
 
 
 
