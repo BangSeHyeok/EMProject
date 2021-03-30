@@ -127,7 +127,7 @@ Public Class MSDB
         myReader = scm.ExecuteReader
 
         Do While myReader.Read()
-            WorkTime_list.Add(New WorkTimeVO(myReader.GetString(0), myReader.GetDateTime(1), myReader.GetDateTime(2), myReader.GetDateTime(3)))
+            WorkTime_list.Add(New WorkTimeVO(myReader.GetValue(0), myReader.GetValue(1), myReader.GetValue(2), myReader.GetValue(3).ToString))
         Loop
 
         myReader.Close()

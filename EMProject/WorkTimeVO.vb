@@ -1,11 +1,11 @@
 ﻿Public Class WorkTimeVO
 
     Private E_Number As String
-    Private E_Date As Date
-    Private E_qtw As Date
-    Private E_qtn As Date
+    Private E_Date As String
+    Private E_qtw As String
+    Private E_qtn As String
 
-    Public Sub New(E_Number As String, E_Date As Date, E_qtw As Date, E_qtn As Date)
+    Public Sub New(E_Number As String, E_Date As String, E_qtw As String, E_qtn As String)
 
         Me.E_Number = E_Number
         Me.E_Date = E_Date
@@ -23,29 +23,29 @@
         End Set
     End Property
 
-    Property _E_Date As Date
+    Property _E_Date As String
         Get
             Return Me.E_Date
         End Get
-        Set(value As Date)
+        Set(value As String)
             Me.E_Date = value
         End Set
     End Property
 
-    Property _E_qtw As Date
+    Property _E_qtw As String
         Get
             Return Me.E_qtw
         End Get
-        Set(value As Date)
+        Set(value As String)
             Me.E_qtw = value
         End Set
     End Property
 
-    Property _E_qtn As Date
+    Property _E_qtn As String
         Get
             Return Me.E_qtn
         End Get
-        Set(value As Date)
+        Set(value As String)
             Me.E_qtn = value
         End Set
     End Property
