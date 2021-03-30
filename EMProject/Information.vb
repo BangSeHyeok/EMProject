@@ -4,6 +4,7 @@ Public Class Information
     Dim db As MSDB = New MSDB
     Dim Information_list As List(Of InformationVO) = db.Information_User("[EMProject].[dbo].[Information]", NumberVO._Number)
     Dim User_list As List(Of UserVO) = db.User_All("[EMProject].[dbo].[User]")
+    Dim WorkTime_list As List(Of WorkTimeVO) = db.workTime_total("[EMProject].[dbo].[WorkTime]", Information_list(0)._E_Number)
 
     Private Sub Information_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -13,6 +14,10 @@ Public Class Information
         '인포메이션 메인화면 정보 출력
         '프로그레스 Bar 달 근무시간 출력
         worktime()
+
+        '月근무 이력 
+        WorkList()
+
 
         '인포메이션 메인화면 정보 출력
         lbl_Name.Text = Information_list(0)._E_Name
@@ -40,14 +45,14 @@ Public Class Information
 
     Private Sub officeList()
 
-        LV_list.Items.Clear()
+        lv_list.Items.Clear()
 
         Dim x As ListViewItem
 
         For Each i In User_list
             x = New ListViewItem(i._E_Name)
             x.SubItems.Add(i._E_Number)
-            LV_list.Items.Add(x)
+            lv_list.Items.Add(x)
         Next
 
     End Sub
@@ -104,11 +109,6 @@ Public Class Information
 
     Public Sub workertime()
 
-        Dim WorkTime_list As List(Of WorkTimeVO) = db.workTime_total("[EMProject].[dbo].[WorkTime]", Information_list(0)._E_Number)
-
-        '시간 가지고온 김에 여기서 리스트 출력할게요
-        'worklist
-
         '시간계산을 하기위한 TimeSpan 함수 
         Dim TSpan As TimeSpan
 
@@ -120,13 +120,15 @@ Public Class Information
 
 
         For Each i In WorkTime_list
+            If i._E_qtw <> "" Then
+                TSpan = Convert.ToDateTime(i._E_qtn).Subtract(Convert.ToDateTime(i._E_qtw))
 
-            TSpan = i._E_qtn.Subtract(i._E_qtw)
+                '점심시간 때문에 60 한번 빼준다.
+                worktotal = TSpan.Hours * 60 + TSpan.Minutes - 60
 
-            '점심시간 때문에 60 한번 빼준다.
-            worktotal = TSpan.Hours * 60 + TSpan.Minutes - 60
+                minutetotal = minutetotal + worktotal
 
-            minutetotal = minutetotal + worktotal
+            End If
 
         Next
 
@@ -135,6 +137,21 @@ Public Class Information
 
     End Sub
 
+    Public Sub WorkList()
+
+        lv_WorkList.Items.Clear()
+
+        Dim x As ListViewItem
+
+        For Each i In WorkTime_list
+            x = New ListViewItem(i._E_Date)
+            x.SubItems.Add(i._E_qtw)
+            x.SubItems.Add(i._E_qtn)
+            x.SubItems.Add(i._E_Number)
+            lv_WorkList.Items.Add(x)
+        Next
+
+    End Sub
 
 
 End Class

@@ -51,11 +51,10 @@ Partial Class Information
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.LV_list = New System.Windows.Forms.ListView()
+        Me.lv_list = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = New System.Windows.Forms.ColumnHeader()
         Me.ColumnHeader2 = New System.Windows.Forms.ColumnHeader()
         Me.pb_Worktime = New System.Windows.Forms.ProgressBar()
@@ -288,13 +287,6 @@ Partial Class Information
         Me.Label2.TabIndex = 29
         Me.Label2.Text = "月 근무상황"
         '
-        'ProgressBar1
-        '
-        Me.ProgressBar1.Location = New System.Drawing.Point(0, 0)
-        Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(100, 23)
-        Me.ProgressBar1.TabIndex = 36
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -324,19 +316,19 @@ Partial Class Information
         Me.Label10.TabIndex = 34
         Me.Label10.Text = "information"
         '
-        'LV_list
+        'lv_list
         '
-        Me.LV_list.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2})
-        Me.LV_list.FullRowSelect = True
-        Me.LV_list.GridLines = True
-        Me.LV_list.HideSelection = False
-        Me.LV_list.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem3})
-        Me.LV_list.Location = New System.Drawing.Point(920, 73)
-        Me.LV_list.Name = "LV_list"
-        Me.LV_list.Size = New System.Drawing.Size(331, 450)
-        Me.LV_list.TabIndex = 35
-        Me.LV_list.UseCompatibleStateImageBehavior = False
-        Me.LV_list.View = System.Windows.Forms.View.Details
+        Me.lv_list.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2})
+        Me.lv_list.FullRowSelect = True
+        Me.lv_list.GridLines = True
+        Me.lv_list.HideSelection = False
+        Me.lv_list.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem3})
+        Me.lv_list.Location = New System.Drawing.Point(920, 73)
+        Me.lv_list.Name = "lv_list"
+        Me.lv_list.Size = New System.Drawing.Size(331, 450)
+        Me.lv_list.TabIndex = 35
+        Me.lv_list.UseCompatibleStateImageBehavior = False
+        Me.lv_list.View = System.Windows.Forms.View.Details
         '
         'ColumnHeader1
         '
@@ -400,11 +392,10 @@ Partial Class Information
         Me.Controls.Add(Me.lv_WorkList)
         Me.Controls.Add(Me.lbl_percent)
         Me.Controls.Add(Me.pb_Worktime)
-        Me.Controls.Add(Me.LV_list)
+        Me.Controls.Add(Me.lv_list)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button3)
@@ -464,11 +455,10 @@ Partial Class Information
     Friend WithEvents Button3 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents ProgressBar1 As ProgressBar
     Friend WithEvents Label5 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents LV_list As ListView
+    Friend WithEvents lv_list As ListView
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents pb_Worktime As ProgressBar
