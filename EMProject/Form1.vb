@@ -5,10 +5,6 @@
     Dim notice As Notice
     Dim old_name As String
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim pyc As PyC
-        pyc = New PyC
-        pyc.aa()
-
         Dim login As Login
         Dim result As DialogResult
         login = New Login()

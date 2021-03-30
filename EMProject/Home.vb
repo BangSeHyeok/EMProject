@@ -1,7 +1,8 @@
-﻿Imports System.Data.SqlClient
+﻿
 
 Public Class Home
     Private Sub Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Dim db As MSDB = New MSDB
         Dim Information_list As List(Of InformationVO) = db.Information_User("[EMProject].[dbo].[Information]", NumberVO._Number)
         ' MsgBox(Information_list.Count)
@@ -9,7 +10,7 @@ Public Class Home
         txt_IntroDuction.Text = Information_list(0)._E_IntroDuction
         txt_Number.Text = Information_list(0)._E_Number
         Dim count = db.WorkTime_Count("[EMProject].[dbo].[WorkTime]", NumberVO._Number, DateTime.Now.ToString("yyyy-MM-dd"))
-        MsgBox(count)
+        'MsgBox(count)
         If count = 2 Then
             btn_gtw.Enabled = False
             btn_gth.Enabled = False
@@ -20,6 +21,7 @@ Public Class Home
             btn_gtw.Enabled = True
             btn_gth.Enabled = False
         End If
+        MsgBox(CrawlingVO.Crawling_list.Count.ToString)
     End Sub
 
     Private Sub btn_gtw_Click(sender As Object, e As EventArgs) Handles btn_gtw.Click
@@ -35,5 +37,9 @@ Public Class Home
         Dim db As MSDB = New MSDB
         db.WorkTime_gth("[EMProject].[dbo].[WorkTime]", NumberVO._Number, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
         btn_gth.Enabled = False
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs)
+
     End Sub
 End Class

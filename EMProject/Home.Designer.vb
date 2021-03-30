@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Home
     Inherits System.Windows.Forms.Form
 
     'Form은 Dispose를 재정의하여 구성 요소 목록을 정리합니다.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Home
     '참고: 다음 프로시저는 Windows Form 디자이너에 필요합니다.
     '수정하려면 Windows Form 디자이너를 사용하십시오.  
     '코드 편집기에서는 수정하지 마세요.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lbl_Number = New System.Windows.Forms.Label()
@@ -36,8 +36,18 @@ Partial Class Home
         Me.btn_gtw = New System.Windows.Forms.Button()
         Me.btn_gth = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.pl_Crawling = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lbl_Today = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lbl_gtw = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lbl_gth = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel1.SuspendLayout()
+        Me.TableLayoutPanel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -167,6 +177,8 @@ Partial Class Home
         '
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.pl_Crawling, 0, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 0, 0)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(-1, 303)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 3
@@ -175,6 +187,14 @@ Partial Class Home
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 166.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(1293, 324)
         Me.TableLayoutPanel1.TabIndex = 5
+        '
+        'pl_Crawling
+        '
+        Me.pl_Crawling.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pl_Crawling.Location = New System.Drawing.Point(3, 161)
+        Me.pl_Crawling.Name = "pl_Crawling"
+        Me.pl_Crawling.Size = New System.Drawing.Size(1287, 160)
+        Me.pl_Crawling.TabIndex = 0
         '
         'Label1
         '
@@ -185,6 +205,101 @@ Partial Class Home
         Me.Label1.Size = New System.Drawing.Size(118, 30)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "現在の情報"
+        '
+        'TableLayoutPanel2
+        '
+        Me.TableLayoutPanel2.ColumnCount = 6
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 240.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 347.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 346.0!))
+        Me.TableLayoutPanel2.Controls.Add(Me.Label2, 0, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.lbl_Today, 1, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.Label3, 2, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.lbl_gtw, 3, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.Label4, 4, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.lbl_gth, 5, 0)
+        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 1
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(1287, 30)
+        Me.TableLayoutPanel2.TabIndex = 1
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label2.Font = New System.Drawing.Font("맑은 고딕", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label2.Location = New System.Drawing.Point(3, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(73, 30)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "日付："
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'lbl_Today
+        '
+        Me.lbl_Today.AutoSize = True
+        Me.lbl_Today.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lbl_Today.Font = New System.Drawing.Font("맑은 고딕", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_Today.Location = New System.Drawing.Point(82, 0)
+        Me.lbl_Today.Name = "lbl_Today"
+        Me.lbl_Today.Size = New System.Drawing.Size(234, 30)
+        Me.lbl_Today.TabIndex = 1
+        Me.lbl_Today.Text = "Label3"
+        Me.lbl_Today.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label3.Font = New System.Drawing.Font("맑은 고딕", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label3.Location = New System.Drawing.Point(322, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(143, 30)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "出勤時間："
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'lbl_gtw
+        '
+        Me.lbl_gtw.AutoSize = True
+        Me.lbl_gtw.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lbl_gtw.Font = New System.Drawing.Font("맑은 고딕", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_gtw.Location = New System.Drawing.Point(471, 0)
+        Me.lbl_gtw.Name = "lbl_gtw"
+        Me.lbl_gtw.Size = New System.Drawing.Size(341, 30)
+        Me.lbl_gtw.TabIndex = 3
+        Me.lbl_gtw.Text = "Label4"
+        Me.lbl_gtw.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label4.Font = New System.Drawing.Font("맑은 고딕", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label4.Location = New System.Drawing.Point(818, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(120, 30)
+        Me.Label4.TabIndex = 4
+        Me.Label4.Text = "退勤時間："
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'lbl_gth
+        '
+        Me.lbl_gth.AutoSize = True
+        Me.lbl_gth.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lbl_gth.Font = New System.Drawing.Font("맑은 고딕", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_gth.Location = New System.Drawing.Point(944, 0)
+        Me.lbl_gth.Name = "lbl_gth"
+        Me.lbl_gth.Size = New System.Drawing.Size(340, 30)
+        Me.lbl_gth.TabIndex = 5
+        Me.lbl_gth.Text = "Label5"
+        Me.lbl_gth.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Home
         '
@@ -210,6 +325,9 @@ Partial Class Home
         Me.Name = "Home"
         Me.Text = "Main"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.TableLayoutPanel2.ResumeLayout(False)
+        Me.TableLayoutPanel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -230,4 +348,12 @@ Partial Class Home
     Friend WithEvents btn_gth As Button
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents Label1 As Label
+    Friend WithEvents pl_Crawling As Panel
+    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents lbl_Today As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents lbl_gtw As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents lbl_gth As Label
 End Class

@@ -24,7 +24,7 @@ Public Class MSDB
         Dim query = "select Count(*) from " & table & " where E_Number=" & u_where_number & " And E_Date='" & u_where_time & "'"
         scm = New SqlCommand(query, scn)
         Dim count = scm.ExecuteScalar()
-        MsgBox("count:" + count.ToString)
+        ' MsgBox("count:" + count.ToString)
         If count = 1 Then
             query = "select * from " & table & " where E_Number=" & u_where_number & " And E_Date='" & u_where_time & "'"
             scm = New SqlCommand(query, scn)
