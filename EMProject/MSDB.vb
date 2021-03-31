@@ -43,11 +43,15 @@ Public Class MSDB
     Function WorkTime_Check(table As String, u_where_number As String, u_where_time As String)
         DBConn()
         Dim WorkTime_list As List(Of WorkTimeVO) = New List(Of WorkTimeVO)
-        Dim query = "select * from " & table & " where E_Number=" & u_where_number & " And E_Date='" & u_where_time & "'"
+        Dim query As String = ""
+        If u_where_number = 0 Then
+            query = "select * from " & table & " where E_Date='" & u_where_time & "'"
+        Else
+            query = "select * from " & table & " where E_Number=" & u_where_number & " And E_Date='" & u_where_time & "'"
+        End If
         scm = New SqlCommand(query, scn)
         myReader = scm.ExecuteReader()
         Do While myReader.Read()
-            MsgBox(myReader.GetValue(3).ToString)
             WorkTime_list.Add(New WorkTimeVO(myReader.GetValue(0), myReader.GetValue(1), myReader.GetValue(2), myReader.GetValue(3).ToString))
         Loop
         myReader.Close()

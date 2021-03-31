@@ -28,7 +28,9 @@ Partial Class Login
         Me.txt_Number = New System.Windows.Forms.TextBox()
         Me.txt_PW = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.pic_loading = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pic_loading, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -78,12 +80,23 @@ Partial Class Login
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.EMProject.My.Resources.Resources.logo
-        Me.PictureBox1.Location = New System.Drawing.Point(67, 42)
+        Me.PictureBox1.Location = New System.Drawing.Point(83, 37)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(223, 96)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
+        '
+        'pic_loading
+        '
+        Me.pic_loading.Image = Global.EMProject.My.Resources.Resources.ajax_loader
+        Me.pic_loading.Location = New System.Drawing.Point(117, 162)
+        Me.pic_loading.Name = "pic_loading"
+        Me.pic_loading.Size = New System.Drawing.Size(147, 138)
+        Me.pic_loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pic_loading.TabIndex = 4
+        Me.pic_loading.TabStop = False
+        Me.pic_loading.Visible = False
         '
         'Login
         '
@@ -91,6 +104,7 @@ Partial Class Login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(392, 433)
+        Me.Controls.Add(Me.pic_loading)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.txt_PW)
         Me.Controls.Add(Me.txt_Number)
@@ -98,8 +112,10 @@ Partial Class Login
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Login"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pic_loading, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -111,4 +127,5 @@ Partial Class Login
     Friend WithEvents txt_Number As TextBox
     Friend WithEvents txt_PW As TextBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents pic_loading As PictureBox
 End Class

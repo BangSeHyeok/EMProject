@@ -12,7 +12,7 @@
         If result <> DialogResult.OK Then
             Me.Close()
         Else
-            MessageBox.Show("로그인 성공")
+            'MessageBox.Show("로그인 성공")
         End If
         home = New Home()
         home.TopLevel = False  'toplevel 을 false 로 변경하면 panel form 에 docking 가능

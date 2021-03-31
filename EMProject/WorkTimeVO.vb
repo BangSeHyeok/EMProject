@@ -6,7 +6,6 @@
     Private E_qtn As String
 
     Public Sub New(E_Number As String, E_Date As String, E_qtw As String, E_qtn As String)
-
         Me.E_Number = E_Number
         Me.E_Date = E_Date
         Me.E_qtw = E_qtw

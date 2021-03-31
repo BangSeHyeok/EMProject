@@ -59,33 +59,33 @@ Namespace My.Resources
                 resourceCulture = value
             End Set
         End Property
-
+        
+        '''<summary>
+        '''  System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        '''</summary>
+        Friend ReadOnly Property ajax_loader() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ajax-loader", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         '''<summary>
         '''  System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         '''</summary>
         Friend ReadOnly Property imo() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("imo", resourceCulture)
-                Return CType(obj, System.Drawing.Bitmap)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
-
+        
         '''<summary>
         '''  System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         '''</summary>
         Friend ReadOnly Property logo() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("logo", resourceCulture)
-                Return CType(obj, System.Drawing.Bitmap)
-            End Get
-        End Property
-
-        '''<summary>
-        '''  System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        '''</summary>
-        Friend ReadOnly Property 다운로드() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("다운로드", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

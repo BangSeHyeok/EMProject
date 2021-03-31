@@ -1,3 +1,3 @@
-﻿Public Module CrawlingVO
+﻿Public Module CrawlingVODay
     Public Crawling_list As List(Of String) = New List(Of String)
 End Module
